@@ -49,6 +49,8 @@ If credentials, keys or other sensitive information need to be stored locally us
 ### References
 
 [OWASP Mobile TOP 10: Insecure Data Storage](https://www.owasp.org/index.php/Mobile_Top_10_2014-M2)
+
 [Android KeyChain Documentation](http://developer.android.com/reference/android/security/KeyChain.html)
+
 [Android KeyStore System Documentation](http://developer.android.com/training/articles/keystore.html)
 
