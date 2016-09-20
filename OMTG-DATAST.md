@@ -5,6 +5,11 @@
 A mobile application should not store any sensitive information like credentials, passwords, usernames or encryption keys. Even by using security controls and mechanisms offered by the OS as a best practice to protect the information, it can be recovered on a rooted device. It should be remembered that the confidentiality of sensitive information stored locally on a device cannot be guaranteed. 
 Should business requirements or other factors outside the security domain dictate that certain sensitive information is kept on the device there are several best practices available on the OS level that should be applied to make it harder for attackers to retrieve sensitive information. 
 
+## References
+
+* OWASP 
+* CWE
+
 
 ## Android
 
