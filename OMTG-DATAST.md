@@ -10,13 +10,13 @@ Should business requirements or other factors outside the security domain dictat
 
 ### White-box Testing
 
-- Check if .db files are available, which are sqlite databases and if they contain sensitive information (usernames, passwords, keys etc.). db files can be access on the command line with sqlite3. Do not create files with permissions of MODE_WORLD_READABLE or MODE_WORLD_WRITABLE unless it is required as any app would be able to read or write the file even though it may be stored in the app’s private data directory.
+- Files with permissions of MODE_WORLD_READABLE or MODE_WORLD_WRITABLE are accessible even though it is stored in the app’s private data directory. WRITE_EXTERNAL_STORAGE or READ_EXTERNAL_STORAGE app permission allows access to the external phone storage which is world readable.
 
-        egrep -irn "MODE_WORLD_READABLE|MODE_WORLD_WRITABLE" . 
+        egrep -irn "MODE_WORLD_READABLE|MODE_WORLD_WRITABLE|WRITE_EXTERNAL_STORAGE|READ_EXTERNAL_STORAGE" . 
 
-- openFileOutput() will create the file (or replace a file of the same name) and make it private to the application.
+- Below listed functions read from or write to the internal app directory.
 
-        egrep -irn "openFileOutput(" . 
+        egrep -irn "openFileOutput(|createTempFile(|openFile(" . 
         
 - Although the name suggests this is External storage, it is actually a private application folder that could exist on the external sdcard. getExternalFilesDir() will return a path to the application's /data/ folder or internal storage. Check that no confidential information is written to the SDcard/external storage. Instead it should be stored in memory. 
 
