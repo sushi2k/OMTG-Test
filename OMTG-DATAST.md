@@ -38,7 +38,12 @@ Should business requirements or other factors outside the security domain dictat
 
 ### Remediation
 
-[How to prevent - bla bla]
+Sensitive information should not be stored on the device. Instead, perform initial authentication using credentials supplied by the user, and then use a short-lived, service-specific authorization token (session token).
+If credentials, keys or other sensitive information need to be stored locally use the KeyChain or KeyStore according to your requirements.
+
+- KeyChain: Use the KeyChain API when you want system-wide credentials. When an app requests the use of any credential through the KeyChain API, users get to choose, through a system-provided UI, which of the installed credentials an app can access. This allows several apps to use the same set of credentials with user consent.
+
+- Keystore: Use the Android Keystore provider to let an individual app store its own credentials that only the app itself can access. This provides a way for apps to manage credentials that are usable only by itself while providing the same security benefits that the KeyChain API provides for system-wide credentials. This method requires no user interaction to select the credentials.
 
 
 ### References
