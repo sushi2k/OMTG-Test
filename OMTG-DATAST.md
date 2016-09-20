@@ -16,11 +16,11 @@ Should business requirements or other factors outside the security domain dictat
 
 - Below listed functions read from or write to the internal app directory.
 
-        egrep -irn "openFileOutput(|createTempFile(|openFile(" . 
+        egrep -irn "openFileOutput(|createTempFile(|openFile(|getFilesDir(|getCacheDir(" . 
         
-- Although the name suggests this is External storage, it is actually a private application folder that could exist on the external sdcard. getExternalFilesDir() will return a path to the application's /data/ folder or internal storage. Check that no confidential information is written to the SDcard/external storage. Instead it should be stored in memory. 
+-  getExternalFilesDir() and getExternalFilesDirs() will create directory on the external storage. Files created in those directories can be only read by the app itself. getExternalStoragePublicDirectory() will create a directory that is world rw.
 
-        egrep -irn "getExternalFilesDir(|getExternalFilesDirs(" . 
+        egrep -irn "getExternalStoragePublicDirectory(|getExternalFilesDir(|getExternalFilesDirs(" . 
 
 ### Black-box Testing
 
