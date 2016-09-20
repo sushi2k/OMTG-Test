@@ -54,3 +54,5 @@ If credentials, keys or other sensitive information need to be stored locally us
 
 [Android KeyStore System Documentation](http://developer.android.com/training/articles/keystore.html)
 
+[Android Storage Documentation](https://developer.android.com/training/basics/data-storage/index.html)
+
