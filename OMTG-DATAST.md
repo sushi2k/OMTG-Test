@@ -28,7 +28,7 @@ Should business requirements or other factors outside the security domain dictat
 
  1. Use the mobile app extensively so that all functionality is at least triggered once.
   
- 2. Download the mobile app data directory from  /data/data/com.example.appname or perform analysis on device directly. 
+ 2. Download the mobile app data directory from  /data/data/com.example.appname and the global storage directory /sdcard/ . 
  
  3. Look for sensitive data such as credentials, passwords, usernames, encryption keys or any other information that could be classified as sensitive in all downloaded files. 
 
@@ -49,4 +49,5 @@ If credentials, keys or other sensitive information need to be stored locally us
 ### References
 
 OWASP - https://www.owasp.org/index.php/Mobile_Top_10_2014-M2
-CWE - XXX
+Android KeyChain - http://developer.android.com/reference/android/security/KeyChain.html 
+Android KeyStore System - http://developer.android.com/training/articles/keystore.html
